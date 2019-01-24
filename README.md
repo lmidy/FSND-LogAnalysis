@@ -13,26 +13,26 @@ psql -d news -f newsdata.sql
 psql -d news 
 '''
 ###### Create Views
-'''
+```
 CREATE VIEW totallogsbydate AS 
 SELECT date(time) AS Date, count(date(time)) AS All_Logs_Total 
 FROM log 
 GROUP BY Date 
 ORDER BY Date;
-'''
-'''
+```
+```
 CREATE VIEW totalerrorsbydate AS
 SELECT date(time) AS Date, count(date(time)) AS Error_Total FROM log 
 WHERE status = '404 NOT FOUND' 
 GROUP BY Date 
 ORDER BY Date;
-'''
-'''
+```
+```
 CREATE VIEW errorrate AS
 SELECT totallogsbydate.date AS date, ((totalerrorsbydate.error_total::float/ all_logs_total::float)*100) AS percent
 FROM totallogsbydate
 LEFT OUTER JOIN totalerrorsbydate ON (totallogsbydate.date = totalerrorsbydate.date);
-'''
+```
 
 ## Program design
 - each of the questions are answered using a single query
