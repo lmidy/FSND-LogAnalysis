@@ -33,6 +33,10 @@ SELECT totallogsbydate.date AS date, ((totalerrorsbydate.error_total::float/ all
 FROM totallogsbydate
 LEFT OUTER JOIN totalerrorsbydate ON (totallogsbydate.date = totalerrorsbydate.date);
 ```
+###### run python program
+```
+python loganalysis.py
+```
 
 ## Program design
 - each of the questions are answered using a single query
