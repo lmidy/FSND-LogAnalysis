@@ -59,3 +59,4 @@ Markoff Chaney - 84557 views
 - minimize use of views if you can
 - comment areas of code that are personally new to me in relation to using DB API
 - attempt to match output format suggested in sample
+- validated pep8 via [pep8online.com](http://pep8online.com/checkresult)
